@@ -1,11 +1,7 @@
 # playonyt.py
 import sys
-
 import yt_dlp
 import webbrowser
-
-
-
 
 def play_youtube_song(query):
     # Prompt the user to enter the song they want to play on YouTube
@@ -24,8 +20,11 @@ def play_youtube_song(query):
         print(f"No search results found for the song: {query}")
 
 # Main function for executing the task directly
-def main():
-    play_youtube_song()
+def main(query=None):  # Modify the main function to accept an optional query parameter
+    if query:
+        play_youtube_song(query)
+    else:
+        print("No query provided.")
 
 # If the module is run directly, execute the main function
 if __name__ == "__main__":
